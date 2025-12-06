@@ -12,7 +12,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 #});
 
 Route::get('/', function () {
-    return view('authentication.register');
+    return view('home');
 });
 
 route::get('register',[AuthController::class,'showRegister'])->name('register.form');

@@ -3,17 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARK ANGEL S. SARMIENTO | Ultra-Transparent Glass Portfolio</title>
+    <title>Registration/Login Landing Page</title>
     <style>
-        /* SMOOTH SCROLLING ANIMATION */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* BASE & TYPOGRAPHY - DARK MODE */
+        /* (Your CSS styles here) */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
         
-        /* ACCENT COLOR: Light Blue */
         :root {
             --accent-color: #4A90E2; 
         }
@@ -22,26 +16,21 @@
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background: #121223; 
+            background: #121223; /* Dark background */
             color: #ffffff;
             min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden; 
         }
         
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 40px;
-            position: relative;
-            z-index: 1;
+        .main-content {
+            text-align: center;
+            max-width: 90%;
         }
-        
-        h1 { font-size: 3.5em; font-weight: 800; }
-        h2 { font-size: 2.2em; font-weight: 600; }
-        h3 { font-size: 1.5em; font-weight: 600; }
 
-        /* PREMIUM iOS LIQUID GLASS EFFECT */
+        /* PREMIUM iOS LIQUID GLASS EFFECT para sa Content Area */
         .liquid-glass-card {
             background: rgba(255, 255, 255, 0.02); 
             border-radius: 24px;
@@ -49,15 +38,9 @@
             backdrop-filter: blur(40px);
             -webkit-backdrop-filter: blur(40px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            margin-bottom: 40px;
-            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            padding: 80px 60px;
+            margin: 0;
             position: relative;
-        }
-
-        .liquid-glass-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2);
         }
 
         /* Shine Effect inside the card */
@@ -73,301 +56,115 @@
             pointer-events: none;
         }
 
-        /* 1. HEADER & MAIN NAVIGATION */
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(25px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        /* Styling para sa Text */
+        .greeting-text {
+            font-size: 5em; 
+            font-weight: 800; 
+            line-height: 1.1;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .name-text {
+            font-size: 6em; 
+            font-weight: 800;
+            line-height: 1.1;
+            margin-top: 0;
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        /* Styling para sa Buttons */
+        .button-container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Ginawang Pangkalahatan na Link/Button Style */
+        .action-link { 
             padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .main-nav a {
-            color: #ffffff; 
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 500; 
-            transition: color 0.3s ease;
-            /* REMOVED: text-transform: uppercase; */
-            font-size: 0.9em;
-        }
-
-        .main-nav a:hover {
-            color: var(--accent-color); 
-        }
-
-        /* 2. MOVED SOCIAL LINKS */
-        .social-links-moved {
+            font-size: 1.2em;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-transform: capitalize;
+            min-width: 150px;
+            text-decoration: none; /* Inalis ang underline */
+            display: inline-block; /* Mahalaga para gumana ang padding */
             text-align: center;
-            padding: 20px 0 5px;
-            margin-bottom: 20px;
         }
-        .social-links-moved a {
+
+        /* Login Link/Button Style */
+        .login-link {
+            background-color: #ffffff; 
+            color: #121223;
+            border: 1px solid #ffffff;
+        }
+
+        .login-link:hover {
+            background-color: var(--accent-color);
+            border: 1px solid var(--accent-color);
             color: #ffffff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 400;
-            opacity: 0.7;
-            transition: opacity 0.3s, color 0.3s;
-        }
-        
-        .social-links-moved a:hover {
-            opacity: 1;
-            color: var(--accent-color);
-        }
-        
-        /* CONTENT STYLES */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            padding-top: 10px;
-            justify-content: flex-start; 
+            box-shadow: 0 6px 15px rgba(74, 144, 226, 0.4);
         }
 
-        .skill-bubble {
-            padding: 10px 20px;
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.05); 
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            font-weight: 500;
-        }
-        
-        .education-item {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+        /* Register Link/Button Style */
+        .register-link {
+            background-color: rgba(255, 255, 255, 0.1); 
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        .education-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        /* Highlighting with new accent color */
-        p strong {
-            color: var(--accent-color); 
+        .register-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid #ffffff;
         }
 
-        .education-item p:last-of-type {
-            color: var(--accent-color); 
-        }
-
-        .award-item h3 {
-            color: var(--accent-color); 
-        }
-
-        .award-item p {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .award-item {
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.1); 
-        }
-        .award-item:last-child {
-            border-bottom: none;
-        }
-
-        .reference-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 40px;
-        }
-        
-        .reference-grid p {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .reference-grid p:nth-child(3), .reference-grid p:nth-child(4) {
-            color: var(--accent-color); 
+        /* Media Queries para sa responsiveness */
+        @media (max-width: 768px) {
+            .liquid-glass-card {
+                padding: 40px 30px;
+            }
+            .greeting-text {
+                font-size: 3em;
+            }
+            .name-text {
+                font-size: 4em;
+                margin-bottom: 30px;
+            }
+            .action-link {
+                padding: 12px 25px;
+                font-size: 1em;
+                min-width: 120px;
+            }
+            .button-container {
+                gap: 15px;
+                justify-content: center;
+            }
+            .greeting-text, .name-text {
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-
-    <header class="header">
-        <div class="name">
-            <h3 style="margin: 0; font-weight: 800;">Mark Angel S.Sarmiento</h3>
+    <div class="main-content">
+        <div class="liquid-glass-card">
+            
+            <h1 class="greeting-text">HI</h1>
+            <h1 class="name-text">Mark Angel Sarmiento</h1>
+            
+            <div class="button-container">
+                <a href="**home.html**" class="action-link register-link">register</a> 
+                
+                <a href="**login.html**" class="action-link login-link">Login</a>
+            </div>
+            
         </div>
-        
-        <nav class="main-nav">
-            <a href="#education" title="Pumunta sa Educational Background">Educational Background</a> 
-            <a href="#skills" title="Pumunta sa Skills and Abilities">Skills and Abilities</a>
-            <a href="#personal-info" title="Pumunta sa Personal Information">Personal Information</a>
-            <a href="#awards" title="Pumunta sa Certifications and Awards">Certifications and Awards</a>
-            <a href="#references" title="Pumunta sa Character References">Character References</a>
-        </nav>
-    </header>
-
-    <main class="container">
-        
-        <div class="social-links-moved">
-            <a href="https://www.facebook.com/mangel.sarmiento.1" target="_blank" title="Facebook Profile">Facebook</a> | 
-            <a href="https://www.instagram.com/markchiatt0/" target="_blank" title="Instagram Profile">Instagram</a> |
-            <a href="https://github.com/m4rk06" target="_blank" title="GitHub Repository">GitHub</a>
-        </div>
-        
-        <section class="hero" style="padding: 60px 0;">
-            <div class="liquid-glass-card" style="text-align: center;">
-                 <h2 style="margin-bottom: 15px; font-size: 2.5em; font-weight: 800;">CAREER OVERVIEW</h2>
-                 
-                 <p style="font-size: 1.2em; max-width: 900px; margin: 0 auto; font-weight: 400; line-height: 1.6;">
-                    A **creative and detail-oriented UX/UI Designer** with a strong passion for crafting **intuitive, user-centered digital experiences.** Skilled in transforming complex ideas into clean, functional designs through wireframes, prototypes, and visually engaging interfaces. Experienced in using modern design tools such as **Figma, Adobe XD, and Sketch**, with a solid understanding of **user research, usability testing, and responsive design principles**. Demonstrates strong collaboration with developers and stakeholders to ensure seamless product delivery. Committed to creating designs that that are both beautiful and highly usable, enhancing user satisfaction and overall product performance.
-                 </p>
-            </div>
-        </section>
-
-        <section id="education" style="padding: 40px 0;">
-            <h2>EDUCATIONAL BACKGROUND</h2>
-            <div class="liquid-glass-card">
-                
-                <div class="education-item">
-                    <h3 style="margin-top: 0;">City College of Angeles City, Pampanga</h3>
-                    <p style="margin: 5px 0 0;">(Bachelor of Science in Computer Science (4 years))</p>
-                    <p style="margin: 5px 0 0; font-weight: 600;">S.Y. 2025</p>
-                </div>
-                
-                <div class="education-item">
-                    <h3 style="margin-top: 0;">Francisco G. Nepomuceno Memorial High School (Senior High School)</h3>
-                    <p style="margin: 5px 0 0;">Technical Vocational and Livelihood - **Computer System Servicing (CCS)**</p>
-                    <p style="margin: 5px 0 0;">Citicenter, Pandan, Angeles City</p>
-                    <p style="margin: 5px 0 0; font-weight: 600;">S.Y. 2023</p>
-                </div>
-                
-                <div class="education-item">
-                    <h3 style="margin-top: 0;">Francisco G. Nepomuceno Memorial High School (Junior High School)</h3>
-                    <p style="margin: 5px 0 0;">Citicenter, Pandan, Angeles City</p>
-                    <p style="margin: 5px 0 0; font-weight: 600;">S.Y. 2021</p>
-                </div>
-                
-                <div class="education-item">
-                    <h3 style="margin-top: 0;">Sto. Rosario Elementary School (Primary)</h3>
-                    <p style="margin: 5px 0 0;">Sto Rosario, Angeles City</p>
-                    <p style="margin: 5px 0 0; font-weight: 600;">S.Y. 2015</p>
-                </div>
-            </div>
-        </section>
-
-        
-        <section id="skills" style="padding: 40px 0;">
-            <h2>SKILLS AND ABILITIES</h2>
-            <div class="liquid-glass-card">
-                <div class="skills-container">
-                    <span class="skill-bubble">Leadership</span>
-                    <span class="skill-bubble">Management skills</span>
-                    <span class="skill-bubble">Communication skills</span>
-                    <span class="skill-bubble">Active listening</span>
-                    <span class="skill-bubble">Adaptability</span>
-                    <span class="skill-bubble">Time management</span>
-                    <span class="skill-bubble">Work ethic</span>
-                    <span class="skill-bubble">Creativity</span>
-                    <span class="skill-bubble">Computer skills</span>
-                    <span class="skill-bubble">Problem-solving</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="personal-info" style="padding: 40px 0;">
-            <h2>PERSONAL INFORMATION</h2>
-            <div class="liquid-glass-card">
-                <p><strong>Name:</strong> Mark Angel S. Sarmiento</p>
-                <p><strong>Location:</strong> Lourdes Sur, Angeles City, Pampanga</p>
-                <p style="margin-top: 15px;"><strong>Age:</strong> 23 years old</p>
-                <p><strong>Birthday:</strong> November 06 2002</p>
-                <p><strong>Sex:</strong> Male</p>
-                <p><strong>Civil Status:</strong> Single</p>
-            </div>
-        </section>
-
-        <section id="awards" style="padding: 40px 0;">
-            <h2>CERTIFICATIONS AND AWARDS</h2>
-            <div class="liquid-glass-card">
-                
-                <div class="award-item">
-                    <h3 style="margin-top: 0;">Outstanding CSS Academic Performance</h3>
-                    <p style="margin-top: 5px;">Academic Performance in Computer System Servicing during the First Semester for the School Year 2021-2022.</p>
-                    <p style="font-size: 0.9em; color: rgba(255, 255, 255, 0.7);">**Given this 24th day of February 2022**</p>
-                </div>
-
-                <div class="award-item">
-                    <h3 style="margin-top: 0;">With Honors (First Quarter S.Y. 2021-2022)</h3>
-                    <p style="margin-top: 5px;">Outstanding Academic Performance in his/her class.</p>
-                    <p style="font-size: 0.9em; color: rgba(255, 255, 255, 0.7);">**Given this 26th day of November 2021**</p>
-                </div>
-                
-                <div class="award-item">
-                    <h3 style="margin-top: 0;">With Honors (Second Quarter S.Y. 2021-2022)</h3>
-                    <p style="margin-top: 5px;">Outstanding Academic Performance in his/her class.</p>
-                    <p style="font-size: 0.9em; color: rgba(255, 255, 255, 0.7);">**Given this 24th day of February 2022**</p>
-                </div>
-                
-                <div class="award-item">
-                    <h3 style="margin-top: 0;">With Honors (Third Quarter S.Y. 2021-2022)</h3>
-                    <p style="margin-top: 5px;">Outstanding Academic Performance in his/her class.</p>
-                    <p style="font-size: 0.9em; color: rgba(255, 255, 255, 0.7);">**Given this 29th day of April 2022**</p>
-                </div>
-                
-                <div class="award-item">
-                    <h3 style="margin-top: 0;">With Honors (Fourth Quarter S.Y. 2021-2022)</h3>
-                    <p style="margin-top: 5px;">Outstanding Academic Performance in his/her class.</p>
-                    <p style="font-size: 0.9em; color: rgba(255, 255, 255, 0.7);">**Given this 6th day of July 2022**</p>
-                </div>
-                
-                <div class="award-item">
-                    <h3 style="margin-top: 0;">With Honors (2nd Quarter S.Y. 2022-2023)</h3>
-                    <p style="margin-top: 5px;">In recognition of his/her outstanding academic performance with a general average of **91**.</p>
-                </div>
-                
-                <div class="award-item">
-                    <h3 style="margin-top: 0;">With Honors (3rd Quarter S.Y. 2022-2023)</h3>
-                    <p style="margin-top: 5px;">In recognition of his/her outstanding academic performance with a general average of **90**.</p>
-                </div>
-                
-                <div class="award-item">
-                    <h3 style="margin-top: 0;">With Honors (4th Quarter S.Y. 2022-2023)</h3>
-                    <p style="margin-top: 5px;">In recognition of his/her outstanding academic performance with a general average of **92**.</p>
-                </div>
-                
-            </div>
-        </section>
-        
-        <section id="references" style="padding: 40px 0 100px;">
-            <h2>CHARACTER REFERENCES</h2>
-            <div class="liquid-glass-card">
-                <div class="reference-grid">
-                    <div>
-                        <h3 style="margin-top: 0;">Princess Joy Revilla</h3>
-                        <p style="margin: 5px 0 0;">Teacher III</p>
-                        <p style="margin: 5px 0 0;">princess.revilla@deped.gov.ph</p>
-                    </div>
-                    <div>
-                        <h3 style="margin-top: 0;">Benjamin M. Tamayo</h3>
-                        <p style="margin: 5px 0 0;">Master Teacher II</p>
-                        <p style="margin: 5px 0 0;">benjamin.tamayo@deped.gov.ph</p>
-                    </div>
-                    <div>
-                        <h3 style="margin-top: 0;">Roldan B. Casupanan</h3>
-                        <p style="margin: 5px 0 0;">Secondary School Teacher</p>
-                        <p style="margin: 5px 0 0;">No: **0905 578 7310**</p>
-                        <p style="margin: 5px 0 0;">roldan.casupanan@deped.gov.ph</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-    
-    <footer style="text-align: center; padding: 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.5); font-size: 0.9em; background: transparent;">
-        &copy; 2025 Mark Angel S. Sarmiento. Crafted with Ultra-Transparent Glass Precision.
-    </footer>
-
+    </div>
 </body>
 </html>

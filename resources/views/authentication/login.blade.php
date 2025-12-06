@@ -83,7 +83,7 @@
 
         /* ERROR ALIGNMENT */
         .error-box {
-            color: #ff4d4d;
+            color: red;
             font-size: 0.9em;
             margin-bottom: 15px;
             text-align: left;
