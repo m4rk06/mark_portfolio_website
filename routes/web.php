@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use SabastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
-    return view('authentication.login');
+    return view('home');
 });
 
 
