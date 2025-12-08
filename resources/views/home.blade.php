@@ -159,9 +159,9 @@
             <h1 class="name-text">Mark Angel Sarmiento</h1>
             
             <div class="button-container">
-                <a href="**home.html**" class="action-link register-link">register</a> 
+                <a href="{{ route('register.form') }}" class="action-link register-link">Register</a> 
                 
-                <a href="**login.html**" class="action-link login-link">Login</a>
+                <a href="{{ route('login.form') }}" class="action-link login-link">Login</a>
             </div>
             
         </div>

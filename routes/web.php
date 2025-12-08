@@ -31,5 +31,5 @@ Route::get('/admin/login', function () {
 })->name('admin.login');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('components.dashboard');
 })->name('dashboard');
